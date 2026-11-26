@@ -1,5 +1,7 @@
 # 拆卡实验室
 
+[**在线试玩**](https://chaojituoluking.github.io/card-pack-lab/?pack=whale&effects=gold) · 打开后可在顶部切换金光版、稀有卡、背单词和小羊。
+
 撕开卡包，看角色闪卡一张张弹出来。这里可以拆大肥鱼金卡、看骑鲸稀有卡、点读英语单词，也能收集绵绵牧场的小羊闪卡。项目使用 React、TypeScript、Vite 和 GSAP，在浏览器里运行。
 
 ![大肥鱼金光版拆包后的六张闪卡及顶部玩法切换](docs/images/gold-pack.jpg)
