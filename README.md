@@ -6,6 +6,10 @@
 
 ![大肥鱼金光版拆包后的六张闪卡及顶部玩法切换](docs/images/gold-pack.jpg)
 
+## 更多试玩
+
+[在线试玩《体素山谷村》](https://chaojituoluking.github.io/voxel-village/) · 在 3D 体素村庄里漫游、种田和钓鱼。
+
 ## 本地启动
 
 需要 Node.js 22.12 或更高版本。克隆仓库并启动。
