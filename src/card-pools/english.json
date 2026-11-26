@@ -1,0 +1,14 @@
+[
+  {"word": "hide", "meaning": "藏起来", "example": "Where do you hide your snacks?", "translation": "你把零食藏在哪儿？", "audio": "./audio/english/hide.mp3", "exampleAudio": "./audio/english/hide-sentence.mp3", "exampleWordStart": 0.62},
+  {"word": "shake", "meaning": "摇动", "example": "Shake the bag gently.", "translation": "轻轻摇一摇袋子。", "audio": "./audio/english/shake.mp3", "exampleAudio": "./audio/english/shake-sentence.mp3"},
+  {"word": "hug", "meaning": "拥抱", "example": "Give me a hug.", "translation": "给我一个拥抱。", "audio": "./audio/english/hug.mp3", "exampleAudio": "./audio/english/hug-sentence.mp3", "exampleWordStart": 0.4},
+  {"word": "stir", "meaning": "搅拌", "example": "Stir the soup.", "translation": "搅一搅汤。", "audio": "./audio/english/stir.mp3", "exampleAudio": "./audio/english/stir-sentence.mp3"},
+  {"word": "listen", "meaning": "听；倾听", "example": "Listen to the rain.", "translation": "听听雨声。", "audio": "./audio/english/listen.mp3", "exampleAudio": "./audio/english/listen-sentence.mp3"},
+  {"word": "stretch", "meaning": "伸展", "example": "Stretch your arms.", "translation": "伸展一下手臂。", "audio": "./audio/english/stretch.mp3", "exampleAudio": "./audio/english/stretch-sentence.mp3"},
+  {"word": "unwrap", "meaning": "拆开包装", "example": "Unwrap your gift.", "translation": "拆开你的礼物。", "audio": "./audio/english/unwrap.mp3", "exampleAudio": "./audio/english/unwrap-sentence.mp3"},
+  {"word": "peel", "meaning": "剥皮；削皮", "example": "Peel the banana.", "translation": "把香蕉皮剥开。", "audio": "./audio/english/peel.mp3", "exampleAudio": "./audio/english/peel-sentence.mp3"},
+  {"word": "slice", "meaning": "切片", "example": "Slice the bread.", "translation": "把面包切片。", "audio": "./audio/english/slice.mp3", "exampleAudio": "./audio/english/slice-sentence.mp3"},
+  {"word": "share", "meaning": "分享", "example": "Let's share this cake.", "translation": "我们一起分这块蛋糕吧。", "audio": "./audio/english/share.mp3", "exampleAudio": "./audio/english/share-sentence.mp3", "exampleWordStart": 0.27},
+  {"word": "whisper", "meaning": "小声说；耳语", "example": "Whisper the answer to me.", "translation": "悄悄告诉我答案。", "audio": "./audio/english/whisper.mp3", "exampleAudio": "./audio/english/whisper-sentence.mp3"},
+  {"word": "float", "meaning": "漂浮", "example": "Leaves float on the water.", "translation": "叶子漂在水面上。", "audio": "./audio/english/float.mp3", "exampleAudio": "./audio/english/float-sentence.mp3", "exampleWordStart": 0.32}
+]

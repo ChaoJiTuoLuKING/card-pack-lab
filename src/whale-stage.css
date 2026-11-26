@@ -1,0 +1,529 @@
+/* Full-bleed coastal illustrations keep the open sky behind the hand of cards. */
+.stage[data-theme='whale'] {
+  --shop-scene: url('./assets/whale-coast-night.webp');
+  --shop-ink: #fff6e8;
+  --shop-muted: #f5edff;
+  --shop-control: #202457ed;
+  --shop-control-border: #adc1f980;
+  --shop-highlight: #ffce77;
+  --shop-highlight-ink: #37213b;
+  --shop-surface: #161c4de8;
+  color: var(--shop-ink);
+  background: #152789;
+}
+.stage[data-theme='whale'][data-light='day'] {
+  --shop-scene: url('./assets/whale-coast-day.webp');
+  --shop-ink: #173758;
+  --shop-muted: #294765;
+  --shop-control: #fff7e7f5;
+  --shop-control-border: #fff4d8b8;
+  --shop-highlight: #ffcc70;
+  --shop-highlight-ink: #4d2b27;
+  --shop-surface: #fff8e8f2;
+  background: #16a3e4;
+}
+.stage[data-theme='whale'][data-light]::before {
+  background: var(--shop-scene) center center / cover no-repeat;
+}
+.stage[data-theme='whale'][data-light]::after {
+  background: linear-gradient(to bottom, #071d501f, transparent 22%);
+}
+.stage[data-theme='whale'] .deck-controls {
+  padding: 7px 9px 7px 17px;
+  border: 1px solid var(--shop-control-border);
+  border-radius: 22px;
+  background: var(--shop-surface);
+  box-shadow: 0 5px 22px #173d6c29;
+}
+.stage[data-theme='whale'] .pack-controls .hint {
+  padding: 5px 12px;
+  border-radius: 14px;
+  background: var(--shop-surface);
+}
+.stage[data-theme='whale'][data-light] .stage-header h1,
+.stage[data-theme='whale'][data-light] .count,
+.stage[data-theme='whale'][data-light] .hint {
+  color: var(--shop-muted);
+}
+.stage[data-theme='whale'][data-light] .stage-header h1 {
+  color: #fffbed;
+  font-weight: 650;
+  text-shadow: 0 1px 5px #19345e95;
+}
+.stage[data-theme='whale'] .stage-header h1 span {
+  color: #ffe9b6;
+}
+
+.stage[data-theme='whale'] .album-toggle span {
+  color: var(--shop-muted);
+}
+
+.stage .stage-tools .theme-toggle {
+  color: #eff9ef;
+  background: #31534f;
+  border: 1px solid #8aa9a1;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.stage .stage-tools .theme-toggle:hover {
+  background: #42665f;
+}
+.stage[data-theme='whale']
+  :is(.album-toggle, .stage-tools button, .shake-button, .secondary, .deck-nav button) {
+  color: var(--shop-ink);
+  background: var(--shop-control);
+  border: 1px solid var(--shop-control-border);
+}
+.stage[data-theme='whale']
+  :is(.album-toggle, .stage-tools button, .shake-button, .secondary):hover {
+  border-color: var(--shop-ink);
+  color: var(--shop-ink);
+  background: var(--shop-control);
+}
+.stage[data-theme='whale'] .stage-tools .theme-toggle,
+.stage[data-theme='whale'] .deck-nav button[aria-pressed='true'] {
+  color: var(--shop-highlight-ink);
+  border-color: #ffdc9b;
+  background: var(--shop-highlight);
+}
+.stage[data-theme='whale'] .stage-tools .theme-toggle:hover {
+  background: #ffecd0;
+}
+.stage[data-theme='whale'] .shake-button > span:first-child {
+  color: var(--shop-highlight);
+}
+.stage[data-theme='whale'] .shake-meter i {
+  border-color: var(--shop-control-border);
+}
+.stage[data-theme='whale'] .shake-meter i[data-lit='true'] {
+  border-color: var(--shop-highlight);
+  background: var(--shop-highlight);
+}
+.stage[data-theme='whale'] .pack-ground {
+  background: radial-gradient(ellipse, #132f3dc2, transparent 70%);
+}
+
+.stage[data-theme='whale'][data-effects='gold'] {
+  --shop-surface: #f2f6ff;
+  --shop-muted: #284b92;
+  --cabinet-light: transparent;
+  --cabinet: url('./assets/whale-snack-cabinet.webp');
+}
+.stage[data-theme='whale'][data-effects='gold'][data-light='day'] {
+  --cabinet-light: #fff2da14;
+}
+@media (max-aspect-ratio: 4/5) {
+  .stage[data-theme='whale'][data-effects='gold'] {
+    --cabinet: url('./assets/whale-snack-cabinet-portrait.webp');
+  }
+}
+.stage[data-theme='whale'][data-effects='gold']::before {
+  background: var(--cabinet) center / cover no-repeat;
+}
+.stage[data-theme='whale'][data-effects='gold']::after {
+  background: var(--cabinet-light);
+}
+.stage[data-effects='gold'] .pack[data-pack='whale'] {
+  --packet-ink: #2049aa;
+  --packet-coral: #5889cf;
+  --pouch: url('./assets/whale-snack-pouch.webp');
+  aspect-ratio: .74;
+}
+.stage[data-effects='gold'] .pack[data-pack='whale'] :is(.packet-skin, .wrapper-back) {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  mask: var(--pouch) center / 100% 100% no-repeat;
+  background: var(--pouch) center / 100% 100% no-repeat;
+}
+.stage[data-effects='gold'] .pack[data-pack='whale'] .packet-skin::before,
+.stage[data-effects='gold'] .pack[data-pack='whale'] .packet-skin::after {
+  content: none;
+}
+/* Borrow the folds from the actual film. Only the shoulder next to the torn
+   edge stretches. The loaded lower half stays still as the strip curls. */
+.stage[data-effects='gold'] .pack[data-pack='whale'] .pack-body .packet-skin::before {
+  content: '';
+  inset: 0;
+  height: 100%;
+  z-index: 0;
+  box-shadow: none;
+  background: var(--pouch) center / 100% 100% no-repeat;
+  mask-image: radial-gradient(ellipse 47% 25% at var(--shoulder, 0%) 19%, black 24%, transparent);
+  transform-origin: var(--shoulder, 0%) 14%;
+  transform: skewX(calc(var(--direction) * var(--tear) * 7deg)) scaleY(calc(1 - var(--tear) * .1));
+}
+.stage[data-effects='gold'] .pack[data-reverse] {
+  --shoulder: 100%;
+}
+.stage[data-effects='gold'] :is(.foil-lining, .foil-lip) {
+  mask: var(--pouch) center / 100% 100% no-repeat;
+}
+.stage[data-effects='gold'] .pack .whale-print-heading {
+  inset: 19.5% 8% auto 13%;
+  gap: .6cqw;
+  transform: perspective(110cqw) rotateY(-5deg) rotate(-2deg);
+  mix-blend-mode: multiply;
+}
+.stage[data-effects='gold'] .whale-print-heading strong {
+  font-size: 16cqw;
+  text-shadow: none;
+}
+.stage[data-effects='gold'] .whale-print-scene {
+  display: none;
+}
+.stage[data-effects='gold'] .whale-print-band {
+  inset: 18% 3% 17% 6%;
+  border-radius: 10% 6% 12% 15%;
+  background: radial-gradient(ellipse 78% 75% at 42% 25%, transparent 94%, #6699db 94.3% 95.4%, transparent 95.8%);
+  mix-blend-mode: multiply;
+}
+.stage[data-effects='gold'] .whale-print-band::after {
+  content: none;
+}
+.stage[data-effects='gold'] .pack .whale-pack-mascot {
+  inset: auto 14% 17%;
+  width: 65%;
+  transform: perspective(160cqw) rotateY(-6deg) rotate(-2deg);
+  mix-blend-mode: multiply;
+  filter: none;
+}
+.stage[data-effects='gold'] .pack .whale-pack-count {
+  inset: auto 13% 12% 18%;
+  padding: 0;
+  background: none;
+  color: var(--packet-ink);
+  letter-spacing: .17em;
+  transform: rotate(-2deg);
+}
+.pack[data-pack='rider'] .foil-reflection,
+.stage[data-effects='gold'] .pack .foil-reflection {
+  background: linear-gradient(105deg, transparent 32%, #fff9 46%, transparent 56%)
+    var(--shine-pos) center / 280% 100%;
+  opacity: .21;
+}
+.pack[data-pack='rider'] .foil-reflection::before,
+.stage[data-effects='gold'] .pack .foil-reflection::before {
+  content: none;
+}
+.stage[data-effects='gold'] .pack[data-opening='true'] .pack-seal {
+  animation: gold-seal-snap 420ms ease-out both;
+}
+@keyframes gold-seal-snap {
+  0% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  24% {
+    translate: calc(var(--direction) * 20px) -18px;
+    rotate: calc(var(--direction) * 17deg);
+  }
+  100% {
+    translate: calc(var(--direction) * 155px) -370px;
+    rotate: calc(var(--direction) * 132deg);
+    opacity: 0;
+  }
+}
+.stage[data-effects='gold'] .pack[data-opening='true'] .pack-body {
+  animation-name: lower-gold-pack;
+  animation-duration: 600ms;
+}
+
+@keyframes lower-gold-pack {
+  0%,
+  39% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(calc(150cqw + 38vh)) rotate(calc(var(--direction) * 9deg));
+  }
+}
+
+.stage[data-effects='gold']::before {
+  transition: filter 220ms ease-out;
+}
+
+.stage[data-effects='gold']:has(.deck[data-ready='false'])::before {
+  filter: brightness(0.52) saturate(0.85);
+}
+
+.gold-effect {
+  position: absolute;
+  z-index: 3;
+  height: auto;
+  translate: -50% -50%;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  mask-image: radial-gradient(ellipse closest-side, #000 78%, #000c 90%, transparent);
+  transition: opacity 120ms ease-out;
+}
+
+.gold-effect-burst {
+  translate: -50% -82%;
+  mask-image: radial-gradient(ellipse 53% 53% at 50% 56%, #000 75%, transparent 100%);
+}
+
+.gold-effect[data-playing] {
+  opacity: 1;
+}
+
+.stage[data-effects='gold'] :is(.card-area, .card-back) {
+  cursor: grab;
+}
+.stage[data-effects='gold'] :is(.card-area, .card-back):active {
+  cursor: grabbing;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .stage[data-effects='gold'] .deck[data-ready='false'] .deck-cards > :first-child .card-back::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(115deg, transparent 32%, #ffe2a1 47%, #fff4d4 50%, transparent 62%)
+      100% center / 260% 100%;
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+    animation: gold-card-edge 430ms 170ms both ease-out;
+  }
+  @keyframes gold-card-edge {
+    from { opacity: 0; }
+    22% { opacity: 1; }
+    to { opacity: 0; background-position: 0% center; }
+  }
+}
+
+.gold-showcase {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at 50% 48%, #281a20d9, #060710f7 64%);
+  animation: gold-showcase-enter 220ms ease-out both;
+}
+
+.gold-showcase[data-phase='leave'] {
+  pointer-events: none;
+  animation: gold-showcase-leave 340ms ease-in both;
+}
+
+.gold-showcase-card {
+  width: min(54vw, 40svh, 290px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage[data-effects='gold'] .gold-showcase-card > .deck-slot {
+  width: 100%;
+}
+
+.stage[data-effects='gold'] .gold-showcase-card .card-area {
+  transform: none;
+}
+
+.gold-showcase-card .card-front {
+  box-shadow:
+    0 0 42px #e99e3f68,
+    0 16px 60px #000a;
+}
+
+@keyframes gold-showcase-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gold-showcase-leave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-effect,
+  .gold-showcase {
+    display: none;
+  }
+  .stage[data-effects='gold'] .pack[data-opening='true'] .pack-body {
+    animation: none;
+  }
+}
+
+/* One hand of six. Width comes from layout so lifted cards retain their native raster density. */
+.stage[data-theme='whale'] .deck {
+  --arc-step: clamp(3px, 0.43vw, 7px);
+  gap: clamp(18px, 4vh, 46px);
+  min-width: 0;
+}
+.stage[data-theme='whale'] .deck .deck-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(96%, 1500px, 183svh);
+  gap: 0;
+  padding: 22px 0 calc(16px + 6.25 * var(--arc-step));
+}
+.stage[data-theme='whale'] .deck-cards .deck-slot {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+}
+.stage[data-theme='whale'] .deck-cards .deck-slot:nth-child(3) {
+  flex-grow: 1.1;
+}
+.stage[data-theme='whale'] .deck .deck-cards .deck-slot .card-area {
+  --lift: 0px;
+  --angle: calc(var(--fan-index) * 2deg);
+  transform: translateY(calc(var(--fan-depth) * var(--arc-step) + var(--lift))) rotate(var(--angle));
+  transform-origin: center 76%;
+}
+.stage[data-theme='whale'] .deck .deck-cards .deck-slot:nth-child(3) .card-area {
+  --lift: -8px;
+  --angle: 0deg;
+}
+@media (hover: hover) and (pointer: fine) {
+  .stage[data-theme='whale'] .deck[data-ready='true'] .deck-cards .deck-slot:hover .card-area {
+    --lift: -14px;
+    --angle: 0deg;
+  }
+}
+.stage[data-theme='whale'] .deck .deck-cards .deck-slot:has(:focus-visible) {
+  z-index: 4;
+}
+.whale-featured {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.stage[data-theme='whale'] .whale-featured .deck-slot {
+  width: min(61vw, 38svh, 270px);
+}
+.stage[data-theme='whale'] .deck .whale-featured .deck-slot .card-area {
+  transform: none;
+}
+@media (max-width: 660px), (hover: none) and (pointer: coarse) {
+  .stage[data-theme='whale'] .deck {
+    gap: clamp(8px, 1.7svh, 16px);
+    padding-top: 16px;
+  }
+  .stage[data-theme='whale'] .deck .deck-cards {
+    width: min(98%, 470px);
+    padding: 8px 0 23px;
+  }
+  .stage[data-theme='whale'] .deck .deck-cards .deck-slot .card-area {
+    --angle: calc(var(--fan-index) * 4deg);
+  }
+  .stage[data-theme='whale'] .deck-cards .deck-slot + .deck-slot {
+    margin-left: -1.6%;
+  }
+  .stage[data-theme='whale'] .deck-cards .deck-slot[data-featured] {
+    z-index: 2;
+  }
+  .stage[data-theme='whale'] .deck .deck-cards .deck-slot[data-featured] .card-area {
+    --angle: 0deg;
+    --lift: -7px;
+    outline: 1px solid var(--shop-highlight);
+    outline-offset: 2px;
+  }
+}
+@media (max-width: 550px) {
+  .stage:has(.theme-toggle) .stage-header {
+    grid-template-columns: auto 1fr;
+    row-gap: 12px;
+  }
+  .stage:has(.theme-toggle) .stage-header h1 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: center;
+  }
+  .stage:has(.theme-toggle) :is(.album-toggle, .stage-tools) {
+    grid-row: 2;
+  }
+}
+@media (max-width: 420px) {
+  .stage:has(.theme-toggle) .stage-tools {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+  .stage:has(.theme-toggle) .stage-tools button,
+  .stage:has(.theme-toggle) .album-toggle {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Keep the deal stationary. Increase the card's layout width so the art is painted
+   at the inspection size, with the outer cards anchored inside the viewport. */
+@media (min-width: 661px) and (hover: hover) and (pointer: fine) {
+  .deck .deck-cards {
+    min-height: min(64svh, 494px);
+  }
+  .deck .deck-cards > .deck-slot {
+    aspect-ratio: 63 / 89;
+  }
+  .deck .deck-cards > .deck-slot > .card-area {
+    position: absolute;
+    top: 50%;
+    left: var(--panorama-x);
+    translate: calc(-1 * var(--panorama-x)) -50%;
+    transition:
+      width 220ms cubic-bezier(0.18, 0.78, 0.22, 1),
+      transform 200ms ease-out;
+  }
+  .deck[data-ready='true']
+    .deck-cards
+    > .deck-slot:is(:hover, :has(:focus-visible)):has([data-revealed='true']) {
+    z-index: 8;
+  }
+  .deck[data-ready='true']
+    .deck-cards
+    > .deck-slot:is(:hover, :has(:focus-visible))
+    > .card-area[data-revealed='true'] {
+    width: max(100%, min(315px, 43svh, 39vw));
+    transform: translateY(-8px);
+  }
+  .stage[data-theme='whale']
+    .deck[data-ready='true']
+    .deck-cards
+    .deck-slot:is(:hover, :has(:focus-visible))
+    .card-area[data-revealed='true'] {
+    --angle: 0deg;
+    --lift: -16px;
+    transform: translateY(var(--lift));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .deck .deck-cards > .deck-slot > .card-area {
+    transition: none;
+  }
+}
+
+
+@media (min-width: 661px) and (orientation: landscape) and (hover: hover) and (pointer: fine) {
+  .stage[data-effects='gold'] .pack[data-pack='whale'] {
+    width: min(40svh, 32vw);
+  }
+  .stage[data-theme='whale'][data-effects='gold'] .deck .deck-cards {
+    width: min(82vw, 96%, 160svh);
+  }
+  .stage[data-effects='gold'] .gold-showcase-card {
+    width: min(36svh, 32vw);
+  }
+  .stage[data-effects='gold'] .deck[data-ready='true'] .deck-cards
+    > .deck-slot:is(:hover, :has(:focus-visible)) > .card-area[data-revealed='true'] {
+    width: max(100%, min(46svh, 32vw));
+  }
+}

@@ -1,0 +1,220 @@
+.pack-mascot {
+  --look-x: 0;
+  --look-y: 0;
+  position: absolute;
+  pointer-events: none;
+  left: 11%;
+  width: 78%;
+  aspect-ratio: 1;
+  bottom: 13%;
+  transform-origin: 50% 96%;
+  filter: drop-shadow(0 5px 5px #081e2745);
+}
+.pack-mascot img,
+.mascot-head {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.mascot-body {
+  object-fit: contain;
+}
+.mascot-head {
+  transform-origin: 50% 61%;
+  transform: translate(calc(var(--look-x) * 1.6%), calc(var(--look-y) * 0.9%))
+    rotate(calc(var(--look-x) * 3.2deg));
+}
+.mascot-eyes {
+  position: absolute;
+  left: 41.25%;
+  right: 41.85%;
+  top: 45.75%;
+  height: 0;
+}
+.mascot-eye {
+  position: absolute;
+  translate: -50% -50%;
+  width: 39.6%;
+  height: auto;
+  aspect-ratio: 6.7/7.9;
+  top: 0;
+}
+.mascot-eye.left {
+  rotate: -4deg;
+  left: 0;
+}
+.mascot-eye.right {
+  rotate: 4deg;
+  left: 100%;
+}
+.eye-white {
+  display: block;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 40% 35%, #fffdf2 35%, #e3d5b7 87%);
+  box-shadow: 0 1px 2px #0c080b9c;
+  transition: scale 80ms;
+}
+.eye-pupil {
+  position: absolute;
+  width: 64%;
+  height: 68%;
+  border-radius: 50%;
+  left: 18%;
+  top: 17%;
+  transform: translate(calc(var(--look-x) * 32%), calc(var(--look-y) * 26%));
+  background:
+    radial-gradient(circle at 34% 24%, #fffcf0 0 12%, transparent 15%),
+    radial-gradient(circle at 64% 72%, #a99a83 0 5%, transparent 8%),
+    radial-gradient(ellipse, #120f10 44%, #48382c 68%, #211916 85%);
+}
+.eye-crease {
+  display: block;
+  position: absolute;
+  inset: 22% 1%;
+  border: solid #f0d5ab;
+  border-width: 0 0 1cqw;
+  border-radius: 50%;
+  opacity: 0;
+}
+.mascot-mouth {
+  position: absolute;
+  left: 47.05%;
+  top: 55.5%;
+  width: 5.1%;
+  height: 2.7%;
+  border-radius: 30% 30% 60% 60%;
+  border-bottom: 0.55cqw solid #ac8273;
+  transition:
+    height 0.12s,
+    width 0.12s;
+}
+.mascot-drop {
+  position: absolute;
+  left: 64%;
+  top: 40%;
+  width: 3.8%;
+  height: 4.6%;
+  border-radius: 2% 80% 60% 80%;
+  background:
+    radial-gradient(ellipse at 38% 37%, #fff9 11%, transparent 17%),
+    linear-gradient(140deg, #e0fbff, #68b7ca);
+  opacity: 0;
+  translate: 0 -40%;
+  transition:
+    opacity 0.08s,
+    translate 0.24s;
+}
+.pack[data-mood='shake'] .eye-white {
+  scale: 1.09 1.17;
+}
+.pack[data-mood='shake'] .eye-pupil {
+  scale: 0.82;
+}
+.pack[data-mood='shake'] .mascot-mouth,
+.pack[data-opening='true'] .mascot-mouth {
+  left: 47.6%;
+  width: 4.2%;
+  height: 5%;
+  background: radial-gradient(ellipse at 50% 95%, #c19689 0 25%, #291a1a 58%);
+  border: 0;
+}
+.pack:is([data-mood='delighted'], [data-wincing]) .eye-white {
+  opacity: 0;
+}
+.pack:is([data-mood='delighted'], [data-wincing]) .eye-crease {
+  opacity: 1;
+}
+.pack[data-mood='delighted'] .eye-crease {
+  rotate: 180deg;
+}
+.pack[data-mood='delighted'] .mascot-mouth {
+  left: 45.9%;
+  width: 7.6%;
+  height: 4%;
+}
+.pack[data-wincing] .mascot-eye.left {
+  rotate: 24deg;
+}
+.pack[data-wincing] .mascot-eye.right {
+  rotate: -24deg;
+}
+.pack[data-wincing] .mascot-mouth {
+  border-top: 0.6cqw solid #c19e8a;
+  border-bottom: 0;
+  border-radius: 60%;
+}
+.pack[data-wincing] .mascot-drop {
+  opacity: 1;
+  translate: 0 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pack[data-blinking] .eye-white {
+    animation: mascot-blink 0.165s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  @keyframes mascot-blink {
+    50% {
+      scale: 1 0.07;
+    }
+  }
+  .pack[data-mood='shake'] .mascot-head {
+    animation: mascot-startle 0.54s ease-out;
+  }
+  @keyframes mascot-startle {
+    15% {
+      transform: translateY(-3%) rotate(-6deg);
+    }
+    43% {
+      transform: translateY(-1%) rotate(4deg);
+    }
+    72% {
+      transform: rotate(-2deg);
+    }
+  }
+  .pack[data-mood='delighted'] .pack-mascot {
+    animation: mascot-bounce 0.6s ease-out;
+  }
+  @keyframes mascot-bounce {
+    25% {
+      transform: translateY(-5%) scale(0.98, 1.04);
+    }
+    60% {
+      transform: scale(1.03, 0.97);
+    }
+  }
+  .pack[data-wincing] .mascot-head {
+    transform: translateY(1.6%) rotate(-4deg) scale(1.035, 0.93);
+  }
+}
+.packet-landscape {
+  position: absolute;
+  inset: 30% 0 8%;
+  background:
+    linear-gradient(0deg, #142d36a8, transparent 76%),
+    url('./assets/panorama.webp') center 52% / cover;
+  opacity: 0.76;
+  mask-image: linear-gradient(transparent, #000 34%);
+}
+.packet-skin .packet-type {
+  left: 0;
+  right: 0;
+  top: 17.5%;
+  text-align: center;
+  font-size: 4.7cqw;
+  letter-spacing: 0.24em;
+}
+.packet-skin .packet-title {
+  left: 0;
+  right: 0;
+  top: 23.5%;
+  text-align: center;
+  font-size: 14cqw;
+  letter-spacing: 0.11em;
+}
+.pack-mascot {
+  z-index: 2;
+}

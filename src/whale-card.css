@@ -1,0 +1,731 @@
+.deck-slot[data-fish] {
+  --fish-ink: #713e52;
+  --fish-line: #c97977;
+  --fish-base: #f7b0a4;
+  --fish-paper: #ffedcf;
+  --fish-rim: #fff6d9;
+  --fish-spot: #f9bea9;
+  --fish-star: #bd7651;
+  --fish-flash: #ffb385;
+}
+
+.deck-slot[data-fish='whale-token'] {
+  --fish-ink: #18465a;
+  --fish-line: #5e9c96;
+  --fish-base: #94d2c0;
+  --fish-paper: #e6f4d8;
+  --fish-rim: #f3ffdb;
+  --fish-spot: #b6dfcb;
+  --fish-star: #a88846;
+  --fish-flash: #ffe08c;
+}
+
+.deck-slot[data-fish='whale-dance'] {
+  --fish-ink: #f0ddff;
+  --fish-line: #b995e3;
+  --fish-base: #3d396b;
+  --fish-paper: #444777;
+  --fish-rim: #bcb9e8;
+  --fish-spot: #8375ac;
+  --fish-star: #ffe49b;
+  --fish-flash: #eb92ff;
+}
+
+.deck-slot[data-fish='whale-headphones'] {
+  --fish-ink: #253e62;
+  --fish-line: #7396ae;
+  --fish-base: #8dbccd;
+  --fish-paper: #e5f1ec;
+  --fish-rim: #f8f3dd;
+  --fish-spot: #a4c7da;
+  --fish-star: #bf6859;
+  --fish-flash: #83e6f3;
+}
+.deck-slot[data-fish='whale-chef'] {
+  --fish-ink: #664328;
+  --fish-line: #ce9b5f;
+  --fish-base: #efbe76;
+  --fish-paper: #fbefc8;
+  --fish-rim: #fff4cc;
+  --fish-spot: #f7d8a1;
+  --fish-star: #9c6538;
+  --fish-flash: #ffb976;
+}
+.deck-slot[data-fish='whale-nap'] {
+  --fish-ink: #494264;
+  --fish-line: #a797ba;
+  --fish-base: #b5b0d7;
+  --fish-paper: #f0e8f6;
+  --fish-rim: #fff4df;
+  --fish-spot: #d1c4e0;
+  --fish-star: #97754e;
+  --fish-flash: #cfabf7;
+}
+[data-fish='whale-headphones'] .fish-paper::after {
+  background: repeating-linear-gradient(0deg, transparent 0 3cqw, var(--fish-line) 3.2cqw 3.45cqw);
+}
+[data-fish='whale-headphones'] .fish-window {
+  border-radius: 12% 41% 12% 41%;
+}
+[data-fish='whale-chef'] .fish-window {
+  border-radius: 48% 48% 8% 8%;
+}
+[data-fish='whale-nap'] .fish-paper::after {
+  background: radial-gradient(circle, var(--fish-rim) 0 0.8cqw, transparent 1cqw) 0 0 / 7cqw 8cqw;
+}
+[data-fish='whale-nap'] .fish-window {
+  border-radius: 50%;
+  transform: rotate(-9deg);
+}
+
+[data-fish] .card-back {
+  border-color: #c1d9df;
+  color: #e1e9d6;
+  box-shadow:
+    inset 0 0 0 3px #334a69,
+    0 4px 0 -2px #707b9b,
+    0 15px 32px -15px #17223fb8;
+  background:
+    radial-gradient(ellipse at 12% 10%, #b1bfca45, transparent 44%),
+    repeating-linear-gradient(135deg, transparent 0 4px, #c0e4e709 4px 5px),
+    linear-gradient(125deg, #727f99, #3e526e 58%, #6b8290);
+}
+
+.fish-back-print,
+.fish-back-print svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fish-back-print b {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  width: 100%;
+  font:
+    700 8cqw/1.2 'Songti SC',
+    'Noto Serif CJK SC',
+    serif;
+  letter-spacing: 0.15em;
+}
+
+[data-fish] .art-wrap {
+  inset: 1.7%;
+  background: var(--fish-paper);
+  border-color: color-mix(in srgb, var(--fish-ink) 55%, transparent);
+  container-type: inline-size;
+}
+
+[data-fish] .art-wrap::after {
+  inset: 2.15% 3%;
+  z-index: 3;
+  border: 1px solid color-mix(in srgb, var(--fish-ink) 34%, transparent);
+  border-radius: 2.3% / 1.6%;
+  background: none;
+}
+
+.fish-paper,
+.fish-window,
+.fish-floor,
+.fish-follow,
+.fish-edition,
+.fish-scene,
+.fish-dance-spark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.fish-paper {
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 12% 6%, #fffffa80, transparent 38%),
+    linear-gradient(147deg, var(--fish-paper) 8%, var(--fish-base) 82%, var(--fish-paper));
+}
+
+.fish-paper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 6cqw, var(--fish-rim) 6cqw 8cqw),
+    repeating-linear-gradient(90deg, transparent 0 6cqw, var(--fish-rim) 6cqw 8cqw);
+}
+
+[data-fish='whale-token'] .fish-paper::after {
+  background: repeating-linear-gradient(
+    142deg,
+    transparent 0 4.3cqw,
+    var(--fish-rim) 4.3cqw 4.7cqw
+  );
+}
+
+[data-fish='whale-dance'] .fish-paper {
+  background:
+    radial-gradient(ellipse at 77% 3%, #b6a0c780, transparent 53%),
+    linear-gradient(147deg, #65658a, #3e416b 58%, #685783);
+}
+
+[data-fish='whale-dance'] .fish-paper::after {
+  opacity: 0.65;
+  background:
+    radial-gradient(circle at 31% 28%, #fff8c7 0 0.42cqw, transparent 0.6cqw) 0 0 / 11cqw 14cqw,
+    radial-gradient(circle at 65% 42%, #fcddff 0 0.3cqw, transparent 0.52cqw) 0 0 / 18cqw 13cqw;
+}
+
+.fish-window {
+  inset: 11% 5% 22%;
+  border-radius: 49% 49% 45% 45% / 45% 45% 49% 49%;
+  border: 1px solid var(--fish-rim);
+  background: radial-gradient(
+    ellipse at 43% 39%,
+    var(--fish-rim),
+    var(--fish-paper) 62%,
+    var(--fish-spot)
+  );
+  box-shadow:
+    0 0 0 1.5cqw color-mix(in srgb, var(--fish-line) 38%, transparent),
+    inset 0 0 0 1.6cqw var(--fish-paper),
+    inset 0 0 0 1.85cqw var(--fish-line);
+}
+
+[data-fish='whale-token'] .fish-window {
+  border-radius: 45% 45% 25% 25% / 40% 40% 26% 26%;
+  transform: rotate(-6deg);
+}
+
+[data-fish='whale-dance'] .fish-window {
+  background:
+    radial-gradient(ellipse at 75% 40%, #dfacd260, transparent 64%),
+    linear-gradient(155deg, #9ca5ca, #7875a9 57%, #73729a);
+  transform: rotate(6deg);
+}
+
+.fish-scene {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.fish-stationery {
+  color: var(--fish-line);
+  opacity: 0.53;
+}
+.fish-lines {
+  stroke: var(--fish-line);
+  fill: none;
+  opacity: 0.72;
+  stroke-width: 0.8;
+}
+.fish-charms {
+  color: var(--fish-ink);
+  opacity: 0.76;
+}
+.fish-print-stars {
+  color: var(--fish-star);
+}
+
+.fish-edition {
+  inset: 4.1% 6.3% auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--fish-ink);
+  font:
+    700 3.7cqw/1.1 'SFMono-Regular',
+    Consolas,
+    monospace;
+  letter-spacing: 0.095em;
+}
+
+.fish-edition svg {
+  width: 12%;
+  height: auto;
+}
+
+.fish-follow {
+  width: 94%;
+  aspect-ratio: 1;
+  left: 3%;
+  top: 11.7%;
+  z-index: 5;
+}
+
+.fish-actor {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 85%;
+}
+
+.fish-pose {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fish-pose img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.fish-eyes {
+  transform: translate(calc((var(--px) - 50) * 0.011%), calc((var(--py) - 50) * 0.006%));
+  transition: transform 115ms ease-out;
+}
+[data-fish='whale-snack'] .card-area[data-reacting] .fish-eyes {
+  transform: translate(calc((var(--px) - 45) * 0.019%), 0.58%);
+}
+
+.fish-floor {
+  left: 24%;
+  right: 24%;
+  top: 75%;
+  height: 5%;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--fish-line) 55%, transparent);
+  filter: blur(1.6cqw);
+}
+
+.fish-action,
+.fish-hop {
+  opacity: 0;
+}
+
+[data-fish] .diffraction {
+  inset: 0;
+  z-index: 2;
+  mix-blend-mode: soft-light;
+  opacity: calc(0.07 + var(--hyp) * 0.23);
+}
+
+[data-fish] .glare {
+  inset: 0;
+  z-index: 2;
+  opacity: calc(0.08 + var(--hyp) * 0.15);
+}
+
+[data-fish] .foil-pattern {
+  inset: 0;
+  opacity: 0.13;
+}
+[data-fish] .coat {
+  opacity: 0.45;
+}
+
+[data-fish] .caption {
+  inset: auto 7.9% 6.5%;
+  padding-top: 2.1%;
+  color: var(--fish-ink);
+  border-top: 1px solid color-mix(in srgb, var(--fish-ink) 56%, transparent);
+}
+
+[data-fish] .caption::before {
+  content: '';
+  position: absolute;
+  top: -1.48cqw;
+  right: 0;
+  width: 2.9cqw;
+  height: 2.9cqw;
+  background: var(--fish-star);
+  border: 1px solid var(--fish-rim);
+  transform: rotate(45deg);
+}
+
+[data-fish] .caption h2 {
+  font:
+    800 13.1cqw/1.24 'Songti SC',
+    'Noto Serif CJK SC',
+    'SimSun',
+    serif;
+  letter-spacing: 0.045em;
+  color: inherit;
+  text-shadow: 0 0.5cqw 0 color-mix(in srgb, var(--fish-rim) 55%, transparent);
+  margin: 0;
+}
+
+[data-fish] .caption .name {
+  margin-top: 1.8%;
+  color: inherit;
+  gap: 0.5em;
+  font:
+    600 4.6cqw/1.15 'PingFang SC',
+    sans-serif;
+  letter-spacing: 0.16em;
+}
+[data-fish] .caption .name::before {
+  background: currentColor;
+  width: 1.6em;
+}
+
+[data-fish='whale-snack'] .card-area[data-reacting] .fish-action,
+[data-fish='whale-token'] .card-area[data-reacting] .fish-action {
+  opacity: 1;
+}
+
+[data-fish='whale-snack'] .card-area[data-reacting] .fish-idle,
+[data-fish='whale-token'] .card-area[data-reacting] .fish-idle {
+  opacity: 0;
+}
+
+.fish-dance-spark {
+  top: 53%;
+  left: 17%;
+  color: #fff8ba;
+  font-size: 13cqw;
+  text-shadow: -2cqw 2cqw 2cqw #ffd58c;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-fish] .fish-pose {
+    transition: opacity 1ms step-end;
+  }
+
+  [data-fish='whale-snack'] .card-area[data-reacting] .fish-pose {
+    transition-delay: 260ms;
+  }
+  [data-fish='whale-snack'] .card-area[data-reacting] .fish-actor {
+    animation: fish-protect 540ms ease-out both;
+  }
+  @keyframes fish-protect {
+    0% {
+      transform: none;
+    }
+    31%,
+    46% {
+      transform: translate(-1%, -2%) rotate(-5deg);
+    }
+    67% {
+      transform: translate(2%, 1%) rotate(3deg);
+    }
+    100% {
+      transform: none;
+    }
+  }
+
+  [data-fish='whale-token'] .fish-actor {
+    transition: transform 300ms cubic-bezier(0.18, 0.73, 0.3, 1);
+  }
+  [data-fish='whale-token'] .card-area[data-reacting] .fish-actor {
+    transform: translate(calc((var(--px) - 50) * 0.09%), calc((var(--py) - 50) * 0.06%));
+  }
+  [data-fish='whale-token'] .card-area[data-reacting] .fish-pose {
+    transition-delay: 130ms;
+  }
+
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] {
+    --dance-beat: 2350ms;
+    --dance-delay: 320ms;
+  }
+  .album-inspect [data-fish='whale-dance'] .card-area[data-revealed='true'] {
+    --dance-delay: 30ms;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-actor {
+    animation: fish-footwork var(--dance-beat) var(--dance-delay) cubic-bezier(0.3, 0.08, 0.3, 1)
+      both;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-idle {
+    animation: fish-dance-idle var(--dance-beat) var(--dance-delay) step-end both;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-action {
+    animation: fish-dance-step var(--dance-beat) var(--dance-delay) step-end both;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-hop {
+    animation: fish-dance-hop var(--dance-beat) var(--dance-delay) step-end both;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-dance-spark {
+    animation: fish-tail-flash var(--dance-beat) var(--dance-delay) ease-out both;
+  }
+  @keyframes fish-footwork {
+    0%,
+    100% {
+      transform: none;
+    }
+    10% {
+      transform: translate(-2%, 1%) rotate(-5deg);
+    }
+    22% {
+      transform: translate(-6%, -2%) rotate(-8deg);
+    }
+    32% {
+      transform: translate(-2%, 2%) rotate(0deg) scale(1.02, 0.97);
+    }
+    44% {
+      transform: translate(5%, -2%) rotate(7deg);
+    }
+    53% {
+      transform: translate(5%, 2%) rotate(3deg) scale(1.03, 0.95);
+    }
+    66% {
+      transform: translate(1%, -8%) rotate(-7deg);
+    }
+    77% {
+      transform: translate(-2%, 2%) rotate(-2deg) scale(1.03, 0.97);
+    }
+    88% {
+      transform: translate(2%, -2%) rotate(4deg);
+    }
+  }
+  @keyframes fish-dance-idle {
+    0%,
+    32%,
+    78%,
+    100% {
+      opacity: 1;
+    }
+    12%,
+    39%,
+    84% {
+      opacity: 0;
+    }
+    95% {
+      opacity: 1;
+    }
+  }
+  @keyframes fish-dance-step {
+    0%,
+    32%,
+    56%,
+    95%,
+    100% {
+      opacity: 0;
+    }
+    12%,
+    39%,
+    84% {
+      opacity: 1;
+    }
+  }
+  @keyframes fish-dance-hop {
+    0%,
+    78%,
+    100% {
+      opacity: 0;
+    }
+    56% {
+      opacity: 1;
+    }
+  }
+  @keyframes fish-tail-flash {
+    0%,
+    19%,
+    51%,
+    89%,
+    100% {
+      opacity: 0;
+      transform: translate(0, 0) scale(0.2);
+    }
+    24%,
+    63% {
+      opacity: 1;
+      transform: translate(-11%, -16%) scale(1);
+    }
+    38%,
+    76% {
+      opacity: 0;
+      transform: translate(-36%, -48%) scale(0.5);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fish-eyes {
+    transition: none;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-idle {
+    animation: fish-pose-reduced-idle 2.1s step-end both;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-action {
+    animation: fish-pose-reduced-step 2.1s step-end both;
+  }
+  [data-fish='whale-dance'] .card-area[data-revealed='true'] .fish-hop {
+    animation: fish-pose-reduced-hop 2.1s step-end both;
+  }
+  @keyframes fish-pose-reduced-idle {
+    0%,
+    86%,
+    100% {
+      opacity: 1;
+    }
+    23% {
+      opacity: 0;
+    }
+  }
+  @keyframes fish-pose-reduced-step {
+    0%,
+    56%,
+    100% {
+      opacity: 0;
+    }
+    23% {
+      opacity: 1;
+    }
+  }
+  @keyframes fish-pose-reduced-hop {
+    0%,
+    86%,
+    100% {
+      opacity: 0;
+    }
+    56% {
+      opacity: 1;
+    }
+  }
+}
+
+/* The hinge runs only while flipping. After landing, paint the front at its layout size. */
+[data-fish] .card-area,
+[data-fish] .card-focus {
+  perspective: none;
+}
+[data-fish] .card-area .card-flip {
+  transform: none;
+  transform-style: flat;
+  transition: none;
+}
+[data-fish] .card-front,
+[data-fish] .card-back {
+  transform: none;
+  backface-visibility: visible;
+}
+[data-fish] .card-area:not([data-revealed='true']) .card-front,
+[data-fish] .card-area[data-revealed='true'] .card-back {
+  visibility: hidden;
+}
+[data-fish] .card-area .foil-card {
+  transform: none;
+  transition: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-fish] .card-area[data-revealed='true'] .card-back {
+    animation: whale-turn-back 240ms ease-in both;
+  }
+  [data-fish] .card-area[data-revealed='true'] .card-front {
+    animation: whale-turn-front 320ms 235ms ease-out backwards;
+  }
+  @keyframes whale-turn-back {
+    from {
+      visibility: visible;
+      transform: perspective(1000px) rotateY(0);
+    }
+    99% {
+      visibility: visible;
+    }
+    to {
+      visibility: hidden;
+      transform: perspective(1000px) rotateY(90deg);
+    }
+  }
+  @keyframes whale-turn-front {
+    from {
+      transform: perspective(1000px) rotateY(-90deg);
+    }
+    to {
+      transform: none;
+    }
+  }
+}
+
+/* Stamped foil sits under the portrait. The shifting spectrum is clipped to
+   the whale-tail microprint, engraved lines and twin borders. */
+.fish-pearl-foil {
+  transform: translate(calc((var(--px) - 50) * 1.5px), calc((var(--py) - 50) * 0.55px));
+  opacity: 0.72;
+}
+[data-tracking] .fish-pearl-foil {
+  opacity: 1;
+}
+[data-fish] .diffraction {
+  background: linear-gradient(
+      113deg,
+      transparent 28%,
+      var(--fish-flash) 39%,
+      #fffbea 46%,
+      #acffef 49%,
+      var(--fish-flash) 54%,
+      transparent 64%
+    )
+    calc(var(--px) * 1%) calc(var(--py) * 1%) / 250% 150%;
+  mix-blend-mode: overlay;
+  opacity: calc(0.12 + var(--hyp) * 0.64);
+  mask-image: linear-gradient(#000 0 72%, transparent 83%);
+}
+.card-area:not([data-tracking]) .fish-pose image {
+  filter: none;
+}
+.fish-props {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  opacity: 0;
+}
+[data-tracking] .fish-props {
+  opacity: 1;
+}
+
+/* The coin descends towards the rim of the outstretched bowl. */
+.fish-coin {
+  transform: translate(calc(50px + (var(--px) - 50) * 0.28px), calc(7px + var(--py) * 0.52px))
+    rotate(calc((var(--px) - 50) * 0.6deg));
+  opacity: clamp(0, calc((100 - var(--py)) / 15), 1);
+}
+.fish-signal.left {
+  stroke: #ea8d76;
+  opacity: clamp(0.06, calc((62 - var(--px)) / 40), 1);
+}
+.fish-signal.right {
+  stroke: #4da8bb;
+  opacity: clamp(0.06, calc((var(--px) - 38) / 40), 1);
+}
+.fish-steam {
+  transform-origin: 50px 72px;
+  transform: skewX(calc((50 - var(--px)) * 0.52deg)) scaleY(calc(1.45 - var(--py) * 0.009));
+  filter: drop-shadow(0 0.4px 0.45px #986728);
+}
+.fish-dream {
+  transform: translate(
+      calc(76px + (var(--px) - 50) * 0.09px),
+      calc(19px + (var(--py) - 50) * 0.1px)
+    )
+    rotate(calc((var(--px) - 50) * 0.18deg));
+}
+
+/* The flip/click choreography keeps its own timeline. While steering, the
+   cursor takes over the three printed poses and the direction of the step. */
+[data-fish='whale-dance'] .card-area[data-dance-pose] .fish-pose {
+  opacity: 0 !important;
+}
+[data-fish='whale-dance'] .card-area[data-dance-pose='center'] .fish-idle,
+[data-fish='whale-dance']
+  .card-area:is([data-dance-pose='left'], [data-dance-pose='right'])
+  .fish-action,
+[data-fish='whale-dance'] .card-area[data-dance-pose='hop'] .fish-hop {
+  opacity: 1 !important;
+}
+[data-fish='whale-dance'] .card-area[data-dance-pose='right'] .fish-action {
+  transform: scaleX(-1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fish-props {
+    transition: opacity 140ms ease;
+  }
+  [data-fish='whale-dance'] .card-area[data-dance-pose] .fish-actor {
+    transform: translate(calc((var(--px) - 50) * 0.13%), calc((var(--py) - 55) * 0.1%))
+      rotate(calc((var(--px) - 50) * 0.13deg)) !important;
+    transition: transform 100ms ease-out;
+  }
+  [data-fish='whale-dance'] .card-area[data-dance-pose='hop'] .fish-dance-spark {
+    animation: none;
+    opacity: 0.95;
+    transform: translateY(-20%);
+  }
+}
